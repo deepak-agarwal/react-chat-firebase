@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import Login from './components/auth/login/login';
+import Register from './components/auth/register/regstier';
+import Chat from './components/home';
+import {auth} from './components/firebase'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+      <Switch >
+      <Route path='/login' exact component={Login}/>
+      <Route path='/' exact component={Register}/>
+      <Route path='/home' component={Chat} />
+      <Route path='/' component={()=>(<div>404 Not found</div>)}/>
+      </Switch>
+      </BrowserRouter>
   );
 }
 
