@@ -1,0 +1,13 @@
+.navigation-wrapper {
+  display: grid;
+  grid-template-columns: 8fr 1fr 1fr;
+  background-color: coral;
+  height: 5vh;
+}
+
+
+hr {
+  border: 1px solid coral;
+  padding:0px;
+  margin:0px
+}

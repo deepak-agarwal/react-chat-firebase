@@ -1,0 +1,11 @@
+.chat-items:hover{
+    background-color:rgb(252, 95, 38);
+
+}
+
+.chat-items{
+    padding: 10px;
+    text-align:center;
+    border: 1px solid coral;
+    margin-bottom: 0.2rem;
+}

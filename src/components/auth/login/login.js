@@ -17,12 +17,11 @@ class Login extends React.Component {
                 firebase
                   .doSignInWithEmailAndPassword(data.email, data.password)
                   .then(authUser => {
-                    this.props.history.push("/home");
-                    setSubmitting(false);
+                    this.props.history.push("/");
                     setSubmitting(false);
                   })
                   .catch(error => {
-                    this.setState({ error });
+                    console.log({ error });
                     setSubmitting(false);
                   });
               }}
@@ -51,6 +50,7 @@ class Login extends React.Component {
                       helperText={errors.password}
                       error={!!errors.password}
                       variant="outlined"
+                      autoComplete='off'
                     />
                   </div>
 

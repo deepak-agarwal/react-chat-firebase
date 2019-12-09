@@ -1,0 +1,16 @@
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height:95vh;
+}
+
+.chats {
+  border-right: coral solid 1px;
+  height: 100%;
+  overflow: scroll;
+}
+
+.users {
+  border-left: coral solid 1px;
+  height: 100%;
+}

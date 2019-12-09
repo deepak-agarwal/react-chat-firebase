@@ -1,0 +1,37 @@
+.chat-list {
+  height: 88vh;
+  overflow: scroll;
+}
+
+.chatbox {
+  height: auto;
+  width: 100%;
+}
+
+.align-right {
+  text-align: right;
+  list-style: none;
+  padding: 0.5em;
+  margin: 0.2rem;
+}
+
+.align-left {
+  text-align: left;
+  list-style: none;
+  padding: 0.5em;
+  margin: 0.2rem;
+}
+
+.bubble {
+  padding: 0.5rem;
+  border-radius: 2rem;
+  margin: 0.2rem;
+}
+
+.bubble-right {
+  background-color: greenyellow;
+}
+
+.bubble-left {
+  background-color: blue;
+}

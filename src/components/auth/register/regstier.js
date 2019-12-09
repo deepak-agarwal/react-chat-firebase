@@ -6,7 +6,6 @@ import { validationSchemaRegister } from "../validation";
 import { Link } from "react-router-dom";
 
 class Register extends React.Component {
-
   render() {
     return (
       <div className="authContainer">
@@ -22,13 +21,16 @@ class Register extends React.Component {
                   setSubmitting(true);
                   firebase
                     .doCreateUserWithEmailAndPassword(data.email, data.password)
-                    .then(authUser => {
-                      this.props.history.push('/home')
-                      setSubmitting(false);
+                    .then(() => {
+                      firebase.createUsers(data).then(user => {
+                        this.props.history.push("/");
+                        console.log(user);
+                        setSubmitting(false);
+                      });
                     })
                     .catch(error => {
-                      this.setState({ error });
-                      setSubmitting(false);
+                      console.log({ error });
+                      // setSubmitting(false);
                     });
                 }}
                 validateOnChange={true}
@@ -67,6 +69,7 @@ class Register extends React.Component {
                         helperText={errors.password}
                         error={!!errors.password}
                         variant="outlined"
+                        autoComplete="off"
                       />
                     </div>
 
